@@ -1,28 +1,28 @@
-import { _decorator, assetManager, Button, Component, ImageAsset, RichText, SpriteFrame, Texture2D } from 'cc';
+import { _decorator, assetManager, Component, ImageAsset, SpriteFrame, Texture2D } from 'cc';
+import slotBarEventBus from '../eventSystem/EventCenter';
+import { soltEventTypes } from '../eventSystem/EventTypes';
 import { MockData } from '../mockData/MockData';
 import { SymbolData } from '../types/SymbolData';
-import { ReelView } from '../views/ReelView';
 
 const { ccclass, property } = _decorator;
 
 @ccclass('SlotController')
 export class SlotController extends Component {
-
-    @property(ReelView)
-    reelViews: ReelView[] = [];
-
-    @property(Button)
-    startButton: Button = null;
-
-    @property(RichText)
-    resultRichText: RichText = null;
-    
     private symbolDataList: SymbolData[] = [];
 
     private spinCompletedCount = 0; // 用來記錄完成幾個滾輪
 
+    onEnable() {
+        slotBarEventBus.on(soltEventTypes.SpinStart, this.onSpinStartl, this); // 註冊事件-開始旋轉
+        slotBarEventBus.on(soltEventTypes.AllReelsFinished, this.onAllReelsFinished, this); // 註冊事件-所有滾輪完成
+    }
+
+    onDisable() {
+        slotBarEventBus.off(soltEventTypes.SpinStart, this.onSpinStartl, this); // 取消註冊事件-開始旋轉
+        slotBarEventBus.off(soltEventTypes.AllReelsFinished, this.onAllReelsFinished, this); // 取消註冊事件-所有滾輪完成
+    }
+
     async start() {
-        this.startButton.node.on('click', this.onClickSpin, this);
         try {
             let data: SymbolData[];
             // 使用mock資料
@@ -32,14 +32,22 @@ export class SlotController extends Component {
 
             this.symbolDataList = data;
             await this.preloadAllSymbols(this.symbolDataList);
-            for (let i = 0; i < this.reelViews.length; i++) {
-                this.reelViews[i].initReel(this.symbolDataList);
-            }
+            slotBarEventBus.emit(soltEventTypes.InitReel, data); // 發送事件，通知SymbolData已經載入完成
         } catch (error) {
             console.error('讀取或載入圖片失敗:', error);
         }
     }
 
+    private async onSpinStartl() {
+        const results = await MockData.getMockSlotBar();
+        slotBarEventBus.emit(soltEventTypes.FetchResult, results);
+    }
+
+    private async onAllReelsFinished() {
+        // 將資料存進後端
+    }
+
+    // 預載入所有符號圖片 (這裡還可以拆出去modle做操作)
     preloadAllSymbols(symbols: SymbolData[]): Promise<void> {
         let loadedCount = 0;
         return new Promise((resolve, reject) => {
@@ -65,31 +73,5 @@ export class SlotController extends Component {
                 });
             });
         });
-    }
-
-
-    onClickSpin() {
-        this.resultRichText.string = '🎲 滾動中...';
-        this.spinCompletedCount = 0;
-        const results = MockData.getMockSlotBar();
-        for (let i = 0; i < this.reelViews.length; i++) {
-            const reelView = this.reelViews[i].getComponent(ReelView);
-            if (reelView) {
-                const spinRounds = 3 + i; // 第一輪轉 3 圈，第二輪轉 4 圈，第三輪轉 5 圈
-                console.log(`模擬結果: ${results[i]}`);
-                const onOneSpinEnd = () => {
-                    this.spinCompletedCount++;
-                    if (this.spinCompletedCount === this.reelViews.length) {
-                        this.showFinalResult(results);
-                    }
-                };
-
-                reelView.spinToSymbol(results[i], spinRounds, 0.5, onOneSpinEnd);
-            }
-        }
-    }
-
-    showFinalResult(results: string[]) {
-        this.resultRichText.string = `🎉 結果：${results.join(' - ')}`;
     }
 }
