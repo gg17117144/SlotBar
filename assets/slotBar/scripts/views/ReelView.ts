@@ -1,125 +1,72 @@
-import { _decorator, Component, Node, Prefab, instantiate, Sprite, tween } from 'cc';
+import { _decorator, Button, Component, RichText } from 'cc';
+import slotBarEventBus from '../eventSystem/EventCenter';
+import { soltEventTypes } from '../eventSystem/EventTypes';
 import { SymbolData } from '../types/SymbolData';
+import { ReelSlot as ReelSlots } from '../views/ReelSlot';
 const { ccclass, property } = _decorator;
 
 @ccclass('ReelView')
 export class ReelView extends Component {
-    @property(Prefab)
-    reelItemPrefab: Prefab = null;
 
-    @property(Node)
-    contentNode: Node = null;
+    @property(ReelSlots)
+    reelViews: ReelSlots[] = [];
 
-    private itemHeight = 100;
-    private symbolNodes: Node[] = [];
-    private symbolDataList: SymbolData[] = [];
+    @property(Button)
+    startButton: Button = null;
 
-    private currentOffset = 0; // 用來做整體偏移的值，但只會影響 reelItem
-    @property(Number)
-    private currentSymbolIndex = 0;
+    @property(RichText)
+    resultRichText: RichText = null;
 
-    private isSpinning = false;
-    private onSpinEnd: Function | null = null;
+    private spinCompletedCount = 0; // 用來記錄完成幾個滾輪
 
-    initReel(symbols: SymbolData[]) {
-        this.symbolDataList = symbols;
-        this.currentSymbolIndex = Math.floor(symbols.length / 2)
-        this.currentOffset = 0;
-        this.contentNode.removeAllChildren();
-        this.symbolNodes = [];
-
-        for (let i = 0; i < symbols.length; i++) {
-            const item = instantiate(this.reelItemPrefab);
-            const sprite = item.getComponentInChildren(Sprite);
-            if (sprite && symbols[i].spriteFrame) {
-                sprite.spriteFrame = symbols[i].spriteFrame;
-            }
-            // 不用設定 y，初始化為0，之後靠 updateVisibleSymbols() 控制位置
-            item.setPosition(0, 0);
-            this.contentNode.addChild(item);
-            this.symbolNodes.push(item);
-        }
-
-        // contentNode 固定位置
-        this.contentNode.setPosition(0, 0);
-        // 初始化時，將符號類型順序反轉
-        this.symbolNodes.reverse();
-        // this.symbolDataList.reverse();
-        // 更新可見符號位置
-        this.updateVisibleSymbols();
-        console.log('符號類型順序');
-        for (let index = 0; index < this.symbolDataList.length; index++) {
-            console.log('符號類型:', this.symbolDataList[index].type);
-        }
-        console.log('現在的符號類型:', this.symbolDataList[this.currentSymbolIndex].type);
+    onEnable() {
+        this.startButton.node.on('click', this.onClickSpin, this);
+        slotBarEventBus.on(soltEventTypes.InitReel, this.onInitReel, this);
+        slotBarEventBus.on(soltEventTypes.FetchResult, this.onFetchResult, this);
     }
 
-    private updateVisibleSymbols() {
-        const count = this.symbolNodes.length;
-        const halfRange = (count - 1) / 2 * this.itemHeight;  // 200
+    onDisable() {
+        this.startButton.node.off('click', this.onClickSpin, this);
+        slotBarEventBus.off(soltEventTypes.InitReel, this.onInitReel, this);
+        slotBarEventBus.off(soltEventTypes.FetchResult, this.onFetchResult, this);
+    }
 
-        const totalHeight = count * this.itemHeight; // 500
-
-        for (let i = 0; i < count; i++) {
-            const item = this.symbolNodes[i];
-
-            // 基準位置：中心對齊，從 200 到 -200
-            let baseY = halfRange - i * this.itemHeight;  // 200,100,0,-100,-200
-
-            // 讓圖片往下滾動
-            let newY = baseY - this.currentOffset;
-
-            // 位置循環維持在 [-halfRange, halfRange]
-            while (newY < -halfRange) {
-                newY += totalHeight;
-            }
-            while (newY > halfRange) {
-                newY -= totalHeight;
-            }
-
-            item.setPosition(0, newY);
+    private onInitReel(symbolDataList: SymbolData[]) {
+        for (let i = 0; i < this.reelViews.length; i++) {
+            this.reelViews[i].initReel(symbolDataList);
         }
     }
 
+    private onFetchResult(results: string[]) {
+        this.startButton.node.active = false; // 重新啟用開始按鈕
+        for (let i = 0; i < this.reelViews.length; i++) {
+            const reelView = this.reelViews[i].getComponent(ReelSlots);
+            if (reelView) {
+                const spinRounds = 3 + i; // 第一輪轉 3 圈，第二輪轉 4 圈，第三輪轉 5 圈
+                console.log(`模擬結果: ${results[i]}`);
+                const onOneSpinEnd = () => {
+                    this.spinCompletedCount++;
+                    if (this.spinCompletedCount === this.reelViews.length) {
+                        this.showFinalResult(results);
+                        this.startButton.node.active = true; // 重新啟用開始按鈕
+                        slotBarEventBus.emit(soltEventTypes.AllReelsFinished);
+                    }
+                };
 
-    spinToSymbol(symbolType: string, spinRounds: number, duration: number = 0.5, onComplete?: Function) {
-        console.log('當前符號資料:', this.symbolDataList.map(s => s.type));
-        if (this.isSpinning) {
-            console.warn("正在轉動中，請稍後");
-            return;
+                reelView.spinToSymbol(results[i], spinRounds, 0.5, onOneSpinEnd);
+            }
         }
+    }
 
-        const targetIndex = this.symbolDataList.findIndex(s => s.type === symbolType);
-        if (targetIndex === -1) {
-            console.warn("找不到指定的符號:", symbolType);
-            return;
-        }
+    onClickSpin() {
+        this.spinCompletedCount = 0; // 重置完成計數
+        this.resultRichText.string = '🎰 旋轉中...';
+        slotBarEventBus.emit(soltEventTypes.SpinStart);
+    }
 
-        this.isSpinning = true;
-        this.onSpinEnd = onComplete || null;
-
-        const currentIndex = this.currentSymbolIndex;
-        let steps = (targetIndex - currentIndex + this.symbolDataList.length) % this.symbolDataList.length;
-        if (steps === 0) steps = this.symbolDataList.length;
-        steps = spinRounds * this.symbolDataList.length + steps;
-        const endOffset = this.currentOffset + steps * this.itemHeight;
-        console.log(`開始滑動到符號: ${symbolType}, 目標索引: ${this.symbolDataList[targetIndex].type}, 當前索引: ${this.symbolDataList[currentIndex].type}, 滾動步數: ${steps}, 結束偏移: ${endOffset}`);
-        tween({ offset: this.currentOffset })
-            .to(duration, { offset: endOffset }, {
-                onUpdate: (target) => {
-                    this.currentOffset = target.offset;
-                    this.updateVisibleSymbols();
-                },
-                onComplete: () => {
-                    // 迴圈歸正偏移值
-                    const totalHeight = this.symbolDataList.length * this.itemHeight;
-                    this.currentOffset = this.currentOffset % totalHeight;
-                    this.currentSymbolIndex = targetIndex;
-                    this.isSpinning = false;
-                    if (this.onSpinEnd) this.onSpinEnd();
-                    console.log("完成滑動到符號:", symbolType);
-                }
-            })
-            .start();
+    showFinalResult(results: string[]) {
+        this.resultRichText.string = `🎉 結果：${results.join(' - ')}`;
     }
 }
+
+
