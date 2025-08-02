@@ -1,15 +1,15 @@
 import { _decorator, Button, Component, RichText } from 'cc';
-import slotBarEventBus from '../eventSystem/EventCenter';
-import { soltEventTypes } from '../eventSystem/EventTypes';
-import { SymbolData } from '../types/SymbolData';
-import { ReelSlot as ReelSlots } from '../views/ReelSlot';
+import slotBarEventBus from '../../eventSystem/EventCenter';
+import { soltEventTypes } from '../../eventSystem/EventTypes';
+import { SymbolData } from '../../types/SymbolData';
+import {ReelSlot} from "db://assets/slotBar/scripts/views/SlotBar/ReelSlot";
+
 const { ccclass, property } = _decorator;
 
 @ccclass('ReelView')
 export class ReelView extends Component {
-
-    @property(ReelSlots)
-    reelViews: ReelSlots[] = [];
+    @property(ReelSlot)
+    reelViews: ReelSlot[] = [];
 
     @property(Button)
     startButton: Button = null;
@@ -40,7 +40,7 @@ export class ReelView extends Component {
     private onFetchResult(results: string[]) {
         this.startButton.node.active = false; // 重新啟用開始按鈕
         for (let i = 0; i < this.reelViews.length; i++) {
-            const reelView = this.reelViews[i].getComponent(ReelSlots);
+            const reelView = this.reelViews[i].getComponent(ReelSlot);
             if (reelView) {
                 const spinRounds = 3 + i; // 第一輪轉 3 圈，第二輪轉 4 圈，第三輪轉 5 圈
                 console.log(`模擬結果: ${results[i]}`);
@@ -53,7 +53,7 @@ export class ReelView extends Component {
                     }
                 };
 
-                reelView.spinToSymbol(results[i], spinRounds, 0.5, onOneSpinEnd);
+                reelView?.spinToSymbol(results[i], spinRounds, 0.5, onOneSpinEnd);
             }
         }
     }

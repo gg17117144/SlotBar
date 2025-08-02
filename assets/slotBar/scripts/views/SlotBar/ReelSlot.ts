@@ -1,8 +1,8 @@
 import { _decorator, Component, Node, Prefab, instantiate, Sprite, tween } from 'cc';
-import { SymbolData } from '../types/SymbolData';
+import { SymbolData } from '../../types/SymbolData';
 const { ccclass, property } = _decorator;
 
-@ccclass('ReelView')
+@ccclass('ReelSlot')
 export class ReelSlot extends Component {
     @property(Prefab)
     reelItemPrefab: Prefab = null;
