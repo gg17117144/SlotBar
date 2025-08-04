@@ -47,11 +47,11 @@ export class ReelSlot extends Component {
         // this.symbolDataList.reverse();
         // 更新可見符號位置
         this.updateVisibleSymbols();
-        console.log('符號類型順序');
-        for (let index = 0; index < this.symbolDataList.length; index++) {
-            console.log('符號類型:', this.symbolDataList[index].type);
-        }
-        console.log('現在的符號類型:', this.symbolDataList[this.currentSymbolIndex].type);
+        // console.log('符號類型順序');
+        // for (let index = 0; index < this.symbolDataList.length; index++) {
+        //     console.log('符號類型:', this.symbolDataList[index].type);
+        // }
+        // console.log('現在的符號類型:', this.symbolDataList[this.currentSymbolIndex].type);
     }
 
     private updateVisibleSymbols() {
