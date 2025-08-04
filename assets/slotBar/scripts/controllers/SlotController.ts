@@ -49,9 +49,9 @@ export class SlotController extends Component {
             // 假設收到的是 spin 結果
             if (msg.event === "SpinResult") {
                 // 呼叫對應方法處理
-                const results: string[] = (msg.data.result as any[]).map(item => String(item));
-                EventBus.slotBarEventBus.emit(soltEventTypes.FetchResult, results);
-                EventBus.slotBarEventBus.emit(soltEventTypes.UpdateCoinText, msg.data.balance);
+                // const results: string[] = (msg.data.result as any[]).map(item => String(item));
+                EventBus.slotBarEventBus.emit(soltEventTypes.FetchResult, msg.data);
+                // EventBus.slotBarEventBus.emit(soltEventTypes.UpdateCoinText, msg.data.balance);
             }
         });
     }

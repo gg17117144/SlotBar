@@ -1137,7 +1137,7 @@
     "_lpos": {
       "__type__": "cc.Vec3",
       "x": -475.11699999999996,
-      "y": 316.816,
+      "y": 0,
       "z": 0
     },
     "_lrot": {
@@ -1175,7 +1175,7 @@
     "__prefab": null,
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 297.265625,
+      "width": 252.7734375,
       "height": 50.4
     },
     "_anchorPoint": {
@@ -1196,7 +1196,7 @@
     "_enabled": true,
     "__prefab": null,
     "_lineHeight": 40,
-    "_string": "💰 金幣：12345",
+    "_string": "💰 金幣：???",
     "_horizontalAlign": 0,
     "_verticalAlign": 0,
     "_fontSize": 40,
@@ -1227,11 +1227,11 @@
     },
     "_enabled": true,
     "__prefab": null,
-    "_alignFlags": 9,
+    "_alignFlags": 10,
     "_target": null,
-    "_left": -573.7498125,
+    "_left": -551.50371875,
     "_right": 439.24518750000004,
-    "_top": -292.01599999999996,
+    "_top": 18.852,
     "_bottom": 0,
     "_horizontalCenter": 0,
     "_verticalCenter": 0,
