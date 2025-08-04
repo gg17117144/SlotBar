@@ -1,10 +1,11 @@
-import { _decorator, assetManager, Component, ImageAsset, SpriteFrame, Texture2D } from 'cc';
-import slotBarEventBus from '../eventSystem/EventCenter';
-import { soltEventTypes } from '../eventSystem/EventTypes';
-import { MockData } from '../mockData/MockData';
-import { SymbolData } from '../types/SymbolData';
+import {_decorator, assetManager, Component, ImageAsset, SpriteFrame, Texture2D} from 'cc';
+import EventBus from '../eventSystem/EventCenter';
+import {soltEventTypes} from '../eventSystem/EventTypes';
+import {MockData} from '../mockData/MockData';
+import {SymbolData} from '../types/SymbolData';
+import {WebSocketService} from "db://assets/slotBar/scripts/services/WebSocketService";
 
-const { ccclass, property } = _decorator;
+const {ccclass, property} = _decorator;
 
 @ccclass('SlotController')
 export class SlotController extends Component {
@@ -13,13 +14,13 @@ export class SlotController extends Component {
     private spinCompletedCount = 0; // 用來記錄完成幾個滾輪
 
     onEnable() {
-        slotBarEventBus.on(soltEventTypes.SpinStart, this.onSpinStartl, this); // 註冊事件-開始旋轉
-        slotBarEventBus.on(soltEventTypes.AllReelsFinished, this.onAllReelsFinished, this); // 註冊事件-所有滾輪完成
+        EventBus.slotBarEventBus.on(soltEventTypes.SpinStart, this.onSpinStart, this); // 註冊事件-開始旋轉
+        EventBus.slotBarEventBus.on(soltEventTypes.AllReelsFinished, this.onAllReelsFinished, this); // 註冊事件-所有滾輪完成
     }
 
     onDisable() {
-        slotBarEventBus.off(soltEventTypes.SpinStart, this.onSpinStartl, this); // 取消註冊事件-開始旋轉
-        slotBarEventBus.off(soltEventTypes.AllReelsFinished, this.onAllReelsFinished, this); // 取消註冊事件-所有滾輪完成
+        EventBus.slotBarEventBus.off(soltEventTypes.SpinStart, this.onSpinStart, this); // 取消註冊事件-開始旋轉
+        EventBus.slotBarEventBus.off(soltEventTypes.AllReelsFinished, this.onAllReelsFinished, this); // 取消註冊事件-所有滾輪完成
     }
 
     async start() {
@@ -32,15 +33,31 @@ export class SlotController extends Component {
 
             this.symbolDataList = data;
             await this.preloadAllSymbols(this.symbolDataList);
-            slotBarEventBus.emit(soltEventTypes.InitReel, data); // 發送事件，通知SymbolData已經載入完成
+
+            await this.connectWebSocket();
+
+            EventBus.slotBarEventBus.emit(soltEventTypes.InitReel, data); // 發送事件，通知SymbolData已經載入完成
         } catch (error) {
-            console.error('讀取或載入圖片失敗:', error);
+            console.error('讀取載入圖片失敗或token有問題:', error);
         }
     }
 
-    private async onSpinStartl() {
-        const results = await MockData.getMockSlotBar();
-        slotBarEventBus.emit(soltEventTypes.FetchResult, results);
+    private async connectWebSocket() {
+        WebSocketService.connectWebSocket(async (msg: any) => {
+            console.log("📩 收到後端訊息：", msg);
+
+            // 假設收到的是 spin 結果
+            if (msg.event === "SpinResult") {
+                // 呼叫對應方法處理
+                const results: string[] = (msg.data.result as any[]).map(item => String(item));
+                EventBus.slotBarEventBus.emit(soltEventTypes.FetchResult, results);
+                EventBus.slotBarEventBus.emit(soltEventTypes.UpdateCoinText, msg.data.balance);
+            }
+        });
+    }
+
+    private async onSpinStart() {
+        WebSocketService.spinStart(10);
     }
 
     private async onAllReelsFinished() {
