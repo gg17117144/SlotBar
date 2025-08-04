@@ -1,0 +1,354 @@
+{
+  "version": "1.0.0",
+  "map": {
+    "D:\\Desktop\\cocosProject\\SlotBar\\assets\\slotBar.meta": {
+      "time": 1753341374354.0217
+    },
+    "D:\\Desktop\\cocosProject\\SlotBar\\assets\\slotBar": {
+      "time": 1753699351870.365,
+      "uuid": "4f7a707f-14f9-4667-842d-d09dd375ee55"
+    },
+    "D:\\Desktop\\cocosProject\\SlotBar\\assets\\slotBar\\scenes.meta": {
+      "time": 1753341339339.931
+    },
+    "D:\\Desktop\\cocosProject\\SlotBar\\assets\\slotBar\\scenes": {
+      "time": 1754122172793.927,
+      "uuid": "c70bb1cf-5dea-4e83-a5a2-cb65c4462843"
+    },
+    "D:\\Desktop\\cocosProject\\SlotBar\\assets\\slotBar\\prefabs.meta": {
+      "time": 1753341367755.1707
+    },
+    "D:\\Desktop\\cocosProject\\SlotBar\\assets\\slotBar\\prefabs": {
+      "time": 1754288799598.7,
+      "uuid": "d816cdcb-cf70-4b91-ac0d-5f1d608a60fc"
+    },
+    "D:\\Desktop\\cocosProject\\SlotBar\\assets\\slotBar\\scripts.meta": {
+      "time": 1753341359620.1118
+    },
+    "D:\\Desktop\\cocosProject\\SlotBar\\assets\\slotBar\\scripts": {
+      "time": 1754288840121.2578,
+      "uuid": "a54519d7-0225-42c5-841a-8e5c5679a254"
+    },
+    "D:\\Desktop\\cocosProject\\SlotBar\\assets\\slotBar\\scenes\\SlotScene.scene.meta": {
+      "time": 1753341395495.2002
+    },
+    "D:\\Desktop\\cocosProject\\SlotBar\\assets\\slotBar\\scenes\\SlotScene.scene": {
+      "time": 1754326454225.2158,
+      "uuid": "a358a14f-5cc3-4f03-97f1-303bc46fbecb"
+    },
+    "D:\\Desktop\\cocosProject\\SlotBar\\assets\\slotBar\\scripts\\core.meta": {
+      "time": 1753341406161.8987
+    },
+    "D:\\Desktop\\cocosProject\\SlotBar\\assets\\slotBar\\scripts\\core": {
+      "time": 1753341406153.391,
+      "uuid": "b41c1d74-b41e-4dba-810c-99ba2e2e700d"
+    },
+    "D:\\Desktop\\cocosProject\\SlotBar\\assets\\slotBar\\scripts\\models.meta": {
+      "time": 1753341411089.016
+    },
+    "D:\\Desktop\\cocosProject\\SlotBar\\assets\\slotBar\\scripts\\models": {
+      "time": 1753341411079.5095,
+      "uuid": "707fa198-af40-4cd4-9e69-64da0b27f63e"
+    },
+    "D:\\Desktop\\cocosProject\\SlotBar\\assets\\slotBar\\scripts\\views.meta": {
+      "time": 1753341416151.661
+    },
+    "D:\\Desktop\\cocosProject\\SlotBar\\assets\\slotBar\\scripts\\views": {
+      "time": 1754123523352.197,
+      "uuid": "8ab655b7-b641-4e67-a0dc-d4330645973e"
+    },
+    "D:\\Desktop\\cocosProject\\SlotBar\\assets\\slotBar\\scripts\\controllers.meta": {
+      "time": 1753341419546.971
+    },
+    "D:\\Desktop\\cocosProject\\SlotBar\\assets\\slotBar\\scripts\\controllers": {
+      "time": 1754315241563.7588,
+      "uuid": "5e0d1d7f-7520-4e19-984f-18d504b7a48f"
+    },
+    "D:\\Desktop\\cocosProject\\SlotBar\\assets\\slotBar\\prefabs\\ReelItem.prefab.meta": {
+      "time": 1753342124953.9487
+    },
+    "D:\\Desktop\\cocosProject\\SlotBar\\assets\\slotBar\\prefabs\\ReelItem.prefab": {
+      "time": 1753342338363.9153,
+      "uuid": "16c4c587-7990-4a4f-acd2-1359b72a484d"
+    },
+    "D:\\Desktop\\cocosProject\\SlotBar\\assets\\slotBar\\scripts\\controllers\\SlotController.ts.meta": {
+      "time": 1753342968420.25
+    },
+    "D:\\Desktop\\cocosProject\\SlotBar\\assets\\slotBar\\scripts\\controllers\\SlotController.ts": {
+      "time": 1754315241563.7588,
+      "uuid": "8a0badb5-5e9b-4c6e-be8b-6ed0ce728672"
+    },
+    "D:\\Desktop\\cocosProject\\SlotBar\\assets\\slotBar\\scripts\\types.meta": {
+      "time": 1753684023900.6345
+    },
+    "D:\\Desktop\\cocosProject\\SlotBar\\assets\\slotBar\\scripts\\types": {
+      "time": 1753684030171.9102,
+      "uuid": "b4012054-21f8-4eca-95d9-2e4d8d701930"
+    },
+    "D:\\Desktop\\cocosProject\\SlotBar\\assets\\slotBar\\scripts\\types\\SymbolData.ts.meta": {
+      "time": 1753684030180.4226
+    },
+    "D:\\Desktop\\cocosProject\\SlotBar\\assets\\slotBar\\scripts\\types\\SymbolData.ts": {
+      "time": 1753684040175.2874,
+      "uuid": "afb0ca9b-a9a3-4dd8-a78a-f489cc38eac5"
+    },
+    "D:\\Desktop\\cocosProject\\SlotBar\\assets\\slotBar\\scripts\\mockData.meta": {
+      "time": 1753684091306.4365
+    },
+    "D:\\Desktop\\cocosProject\\SlotBar\\assets\\slotBar\\scripts\\mockData": {
+      "time": 1753685510345.1914,
+      "uuid": "8fe7b93d-4443-4e46-992d-06fb99989b64"
+    },
+    "D:\\Desktop\\cocosProject\\SlotBar\\assets\\slotBar\\scripts\\services.meta": {
+      "time": 1753684687673.8555
+    },
+    "D:\\Desktop\\cocosProject\\SlotBar\\assets\\slotBar\\scripts\\services\\ApiService.ts.meta": {
+      "time": 1753341432402.0005
+    },
+    "D:\\Desktop\\cocosProject\\SlotBar\\assets\\slotBar\\scripts\\services": {
+      "time": 1754326267097.9568,
+      "uuid": "bf4b57cd-f1a9-4c76-add5-e8b64bff235a"
+    },
+    "D:\\Desktop\\cocosProject\\SlotBar\\assets\\slotBar\\scripts\\services\\ApiService.ts": {
+      "time": 1754312111825.6687,
+      "uuid": "180f0275-1f81-407c-90af-84176f77c9ee"
+    },
+    "D:\\Desktop\\cocosProject\\SlotBar\\assets\\slotBar\\scripts\\mockData\\MockData.ts.meta": {
+      "time": 1753685385607.163
+    },
+    "D:\\Desktop\\cocosProject\\SlotBar\\assets\\slotBar\\scripts\\mockData\\MockData.ts": {
+      "time": 1753709694898.4246,
+      "uuid": "d11d0772-d1e1-40fd-af3f-e264f8939720"
+    },
+    "D:\\Desktop\\cocosProject\\SlotBar\\assets\\slotBar\\artAssets.meta": {
+      "time": 1753699351877.8723
+    },
+    "D:\\Desktop\\cocosProject\\SlotBar\\assets\\slotBar\\artAssets": {
+      "time": 1753699377753.4004,
+      "uuid": "17d77c38-7274-40ec-b52e-9f44cf0c6fe7"
+    },
+    "D:\\Desktop\\cocosProject\\SlotBar\\assets\\slotBar\\artAssets\\SymbolIcon.meta": {
+      "time": 1753699360660.5486
+    },
+    "D:\\Desktop\\cocosProject\\SlotBar\\assets\\slotBar\\artAssets\\SymbolIcon": {
+      "time": 1753699443380.094,
+      "uuid": "1e972e5d-f4cc-4940-9f9d-2e90d0b0d9ad"
+    },
+    "D:\\Desktop\\cocosProject\\SlotBar\\assets\\slotBar\\scripts\\eventSystem.meta": {
+      "time": 1753770514646.0327
+    },
+    "D:\\Desktop\\cocosProject\\SlotBar\\assets\\slotBar\\scripts\\eventSystem": {
+      "time": 1754312857388.3174,
+      "uuid": "a594c1bd-ca7c-4513-a75e-eb17f64e8060"
+    },
+    "D:\\Desktop\\cocosProject\\SlotBar\\assets\\slotBar\\scripts\\eventSystem\\EventCenter.ts.meta": {
+      "time": 1753770788272.7039
+    },
+    "D:\\Desktop\\cocosProject\\SlotBar\\assets\\slotBar\\scripts\\eventSystem\\EventCenter.ts": {
+      "time": 1754289511406.5881,
+      "uuid": "437063d8-457c-42ae-8dcb-64b798df93f9"
+    },
+    "D:\\Desktop\\cocosProject\\SlotBar\\assets\\slotBar\\scripts\\eventSystem\\EventTypes.ts.meta": {
+      "time": 1753770963613.965
+    },
+    "D:\\Desktop\\cocosProject\\SlotBar\\assets\\slotBar\\scripts\\eventSystem\\EventTypes.ts": {
+      "time": 1754312857388.3174,
+      "uuid": "bd19385c-588f-43c0-bab1-a509c9e1e64f"
+    },
+    "D:\\Desktop\\cocosProject\\SlotBar\\assets\\slotBar\\prefabs\\ReelSlot.prefab.meta": {
+      "time": 1753771181631.5515
+    },
+    "D:\\Desktop\\cocosProject\\SlotBar\\assets\\slotBar\\prefabs\\ReelSlot.prefab": {
+      "time": 1753777043995.4028,
+      "uuid": "3af763a6-d005-4e29-b059-01d31cf75854"
+    },
+    "D:\\Desktop\\cocosProject\\SlotBar\\assets\\slotBar\\scripts\\services\\ServiceBase.ts.meta": {
+      "time": 1754055427470.5117
+    },
+    "D:\\Desktop\\cocosProject\\SlotBar\\assets\\slotBar\\scripts\\services\\WebSocketService.ts.meta": {
+      "time": 1754055427471.516
+    },
+    "D:\\Desktop\\cocosProject\\SlotBar\\assets\\slotBar\\scripts\\services\\ServiceBase.ts": {
+      "time": 1754326267097.9568,
+      "uuid": "3c0f30a4-47c8-4944-9c8c-79716cfc7d4a"
+    },
+    "D:\\Desktop\\cocosProject\\SlotBar\\assets\\slotBar\\scripts\\services\\WebSocketService.ts": {
+      "time": 1754315001045.5288,
+      "uuid": "2d6577b6-9077-4710-9b06-1e45d9b998fe"
+    },
+    "D:\\Desktop\\cocosProject\\SlotBar\\assets\\slotBar\\scenes\\LoginScene.scene.meta": {
+      "time": 1754122172796.927
+    },
+    "D:\\Desktop\\cocosProject\\SlotBar\\assets\\slotBar\\scenes\\LoginScene.scene": {
+      "time": 1754309761053.9062,
+      "uuid": "8883e334-c6ea-4fe3-b643-1b7deb774eb3"
+    },
+    "D:\\Desktop\\cocosProject\\SlotBar\\assets\\slotBar\\scripts\\views\\SlotBar.meta": {
+      "time": 1754123512958.619
+    },
+    "D:\\Desktop\\cocosProject\\SlotBar\\assets\\slotBar\\scripts\\views\\SlotBar": {
+      "time": 1754315241560.7607,
+      "uuid": "d3d5d6a5-816c-49c4-afe0-92c0ebd1f0b4"
+    },
+    "D:\\Desktop\\cocosProject\\SlotBar\\assets\\slotBar\\scripts\\views\\Login.meta": {
+      "time": 1754123520539.1755
+    },
+    "D:\\Desktop\\cocosProject\\SlotBar\\assets\\slotBar\\scripts\\views\\Login": {
+      "time": 1754309756963.9385,
+      "uuid": "f8041157-ed41-491c-a73a-c897400e7bce"
+    },
+    "D:\\Desktop\\cocosProject\\SlotBar\\assets\\slotBar\\scripts\\views\\SlotBar\\ReelSlot.ts.meta": {
+      "time": 1753771133640.3472
+    },
+    "D:\\Desktop\\cocosProject\\SlotBar\\assets\\slotBar\\scripts\\views\\SlotBar\\ReelSlot.ts": {
+      "time": 1754311867749.3403,
+      "uuid": "de36840f-95ec-4406-b02a-4d9769f3dac5"
+    },
+    "D:\\Desktop\\cocosProject\\SlotBar\\assets\\slotBar\\scripts\\views\\SlotBar\\ReelView.ts.meta": {
+      "time": 1753771453591.7732
+    },
+    "D:\\Desktop\\cocosProject\\SlotBar\\assets\\slotBar\\scripts\\views\\SlotBar\\ReelView.ts": {
+      "time": 1754315241559.7505,
+      "uuid": "977ebd19-e9dc-4b52-8a7f-0b342df152d3"
+    },
+    "D:\\Desktop\\cocosProject\\SlotBar\\assets\\slotBar\\scripts\\views\\Login\\LoginView.ts.meta": {
+      "time": 1754123543682.2737
+    },
+    "D:\\Desktop\\cocosProject\\SlotBar\\assets\\slotBar\\scripts\\views\\Login\\LoginView.ts": {
+      "time": 1754309756963.9385,
+      "uuid": "480babf0-3491-4040-ab67-6e75c88681f5"
+    },
+    "D:\\Desktop\\cocosProject\\SlotBar\\assets\\slotBar\\scripts\\views\\Login\\RegisterView.ts.meta": {
+      "time": 1754123558851.424
+    },
+    "D:\\Desktop\\cocosProject\\SlotBar\\assets\\slotBar\\scripts\\views\\Login\\RegisterView.ts": {
+      "time": 1754298308416.8835,
+      "uuid": "dbc1bc5a-d1cb-498c-a162-1bbc32bab870"
+    },
+    "D:\\Desktop\\cocosProject\\SlotBar\\assets\\slotBar\\scripts\\views\\Login\\LoginViewController.ts.meta": {
+      "time": 1754220231402.6892
+    },
+    "D:\\Desktop\\cocosProject\\SlotBar\\assets\\slotBar\\scripts\\views\\Login\\LoginViewController.ts": {
+      "time": 1754220993344.4397,
+      "uuid": "fc479904-f1e1-4b5f-ad5a-fd59407fba2e"
+    },
+    "D:\\Desktop\\cocosProject\\SlotBar\\assets\\slotBar\\prefabs\\TipText.prefab.meta": {
+      "time": 1754288799602.2139
+    },
+    "D:\\Desktop\\cocosProject\\SlotBar\\assets\\slotBar\\prefabs\\TipText.prefab": {
+      "time": 1754288799601.2068,
+      "uuid": "950e61e9-9dd5-4852-a179-98859b712a7a"
+    },
+    "D:\\Desktop\\cocosProject\\SlotBar\\assets\\slotBar\\scripts\\unit.meta": {
+      "time": 1754288840122.2622
+    },
+    "D:\\Desktop\\cocosProject\\SlotBar\\assets\\slotBar\\scripts\\unit": {
+      "time": 1754296046144.3489,
+      "uuid": "4f8660ca-7ffd-456f-8670-fb46f90cb7dc"
+    },
+    "D:\\Desktop\\cocosProject\\SlotBar\\assets\\slotBar\\scripts\\unit\\TipTextController.ts.meta": {
+      "time": 1754288867971.1611
+    },
+    "D:\\Desktop\\cocosProject\\SlotBar\\assets\\slotBar\\scripts\\unit\\TipTextController.ts": {
+      "time": 1754296046143.353,
+      "uuid": "2d1c4efd-e698-4ed7-8456-587b242bdcc9"
+    }
+  },
+  "missing": {
+    "c70bb1cf-5dea-4e83-a5a2-cb65c4462843": {
+      "path": "D:\\Desktop\\cocosProject\\SlotBar\\assets\\scenes",
+      "time": 1753341339331.4243,
+      "removeTime": 1753341377750
+    },
+    "a54519d7-0225-42c5-841a-8e5c5679a254": {
+      "path": "D:\\Desktop\\cocosProject\\SlotBar\\assets\\scripts",
+      "time": 1753341359619.1118,
+      "removeTime": 1753341377753
+    },
+    "d816cdcb-cf70-4b91-ac0d-5f1d608a60fc": {
+      "path": "D:\\Desktop\\cocosProject\\SlotBar\\assets\\prefabs",
+      "time": 1753341367745.1267,
+      "removeTime": 1753341377752
+    },
+    "d11c4515-387f-47ac-b686-5d1efca44864": {
+      "path": "D:\\Desktop\\cocosProject\\SlotBar\\assets\\slotBar\\scripts\\mockData\\NewComponent-001.ts",
+      "time": 1753684108466.9397,
+      "removeTime": 1753684126588
+    },
+    "7ee51eaf-7dda-4661-92c0-cd02198ede7a": {
+      "path": "D:\\Desktop\\cocosProject\\SlotBar\\assets\\slotBar\\scripts\\mockData\\NewComponent.ts",
+      "time": 1753684108466.9397,
+      "removeTime": 1753684547782
+    },
+    "ae2ad490-4122-499b-8d75-2fa57f193953": {
+      "path": "D:\\Desktop\\cocosProject\\SlotBar\\assets\\slotBar\\scripts\\network",
+      "time": 1753341432395.4954,
+      "removeTime": 1753684687653
+    },
+    "180f0275-1f81-407c-90af-84176f77c9ee": {
+      "path": "D:\\Desktop\\cocosProject\\SlotBar\\assets\\slotBar\\scripts\\network\\ApiService.ts",
+      "time": 1753341432394.4958,
+      "removeTime": 1753684687653
+    },
+    "926e811b-6325-40a4-8dd3-9aa05e8c8ab7": {
+      "path": "D:\\Desktop\\cocosProject\\SlotBar\\assets\\slotBar\\scripts\\mockData\\getMockSymData.ts",
+      "time": 1753685238341.935,
+      "removeTime": 1753685385597
+    },
+    "4d9dc269-5199-42fa-8b71-22211b11943d": {
+      "path": "D:\\Desktop\\cocosProject\\SlotBar\\assets\\slotBar\\scripts\\mockData\\mockSymbolsData.json",
+      "time": 1753684931643.853,
+      "removeTime": 1753685510345
+    },
+    "1e972e5d-f4cc-4940-9f9d-2e90d0b0d9ad": {
+      "path": "D:\\Desktop\\cocosProject\\SlotBar\\assets\\slotBar\\artAssets\\sym",
+      "time": 1753699360651.5012,
+      "removeTime": 1753699377753
+    },
+    "549605de-6eb3-4ec9-8729-1c193bfa3005": {
+      "path": "D:\\Desktop\\cocosProject\\SlotBar\\assets\\slotBar\\artAssets\\SymbolIcon\\Green_grape_fruit.jpg",
+      "time": 1753699324889.1924,
+      "removeTime": 1753699443300
+    },
+    "2d05f3a0-4541-422e-977a-e3b945f8eb42": {
+      "path": "D:\\Desktop\\cocosProject\\SlotBar\\assets\\slotBar\\artAssets\\SymbolIcon\\Red_Apple.jpg",
+      "time": 1753699317632.766,
+      "removeTime": 1753699443386
+    },
+    "a594c1bd-ca7c-4513-a75e-eb17f64e8060": {
+      "path": "D:\\Desktop\\cocosProject\\SlotBar\\assets\\slotBar\\scripts\\evenSystem",
+      "time": 1753770514636.5122,
+      "removeTime": 1753770529338
+    },
+    "5b8e5780-d06b-430f-88d7-004bf3570d24": {
+      "path": "D:\\Desktop\\cocosProject\\SlotBar\\assets\\slotBar\\scripts\\eventSystem\\slotBarEventCenter.ts",
+      "time": 1753770549579.969,
+      "removeTime": 1753770788263
+    },
+    "288843dd-b52a-4c61-9a8a-c6fa1841b120": {
+      "path": "D:\\Desktop\\cocosProject\\SlotBar\\assets\\slotBar\\scripts\\views\\ReelView.ts",
+      "time": 1753770311526.0396,
+      "removeTime": 1753771133630
+    },
+    "977ebd19-e9dc-4b52-8a7f-0b342df152d3": {
+      "path": "D:\\Desktop\\cocosProject\\SlotBar\\assets\\slotBar\\scripts\\views\\ReelView.ts",
+      "time": 1753774213917.877,
+      "removeTime": 1754123523354
+    },
+    "8e0ccd28-c23f-4473-895f-37f213004c51": {
+      "path": "D:\\Desktop\\cocosProject\\SlotBar\\assets\\slotBar\\scripts\\services\\ApiService-001.ts",
+      "time": 1753684568887.5288,
+      "removeTime": 1754051463694
+    },
+    "de36840f-95ec-4406-b02a-4d9769f3dac5": {
+      "path": "D:\\Desktop\\cocosProject\\SlotBar\\assets\\slotBar\\scripts\\views\\ReelSlot.ts",
+      "time": 1753771121895.9639,
+      "removeTime": 1754123523352
+    },
+    "2d1c4efd-e698-4ed7-8456-587b242bdcc9": {
+      "path": "D:\\Desktop\\cocosProject\\SlotBar\\assets\\slotBar\\scripts\\unit\\T.ts",
+      "time": 1754288867969.1484,
+      "removeTime": 1754288878055
+    }
+  }
+}

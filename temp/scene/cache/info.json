@@ -1,0 +1,12 @@
+{
+    "systemInfo": {
+        "arch": "x64",
+        "cpu": "AMD Ryzen 5 8500G w/ Radeon 740M Graphics      ",
+        "version": "Windows 11 Home"
+    },
+    "sceneListMap": {
+        "a358a14f-5cc3-4f03-97f1-303bc46fbecb": "D:\\Desktop\\cocosProject\\SlotBar\\assets\\slotBar\\scenes\\SlotScene.scene",
+        "8883e334-c6ea-4fe3-b643-1b7deb774eb3": "D:\\Desktop\\cocosProject\\SlotBar\\assets\\slotBar\\scenes\\LoginScene.scene"
+    },
+    "deviceMd5": "fd5e1a66f27d4536a65962b298b97b2b"
+}

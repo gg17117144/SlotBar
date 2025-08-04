@@ -1,0 +1,311 @@
+{
+  "c70bb1cf-5dea-4e83-a5a2-cb65c4462843": {
+    "url": "db://assets/slotBar/scenes",
+    "value": {},
+    "versionCode": 1
+  },
+  "a54519d7-0225-42c5-841a-8e5c5679a254": {
+    "url": "db://assets/slotBar/scripts",
+    "value": {},
+    "versionCode": 1
+  },
+  "d816cdcb-cf70-4b91-ac0d-5f1d608a60fc": {
+    "url": "db://assets/slotBar/prefabs",
+    "value": {},
+    "versionCode": 1
+  },
+  "4f7a707f-14f9-4667-842d-d09dd375ee55": {
+    "url": "db://assets/slotBar",
+    "value": {},
+    "versionCode": 1
+  },
+  "a358a14f-5cc3-4f03-97f1-303bc46fbecb": {
+    "url": "db://assets/slotBar/scenes/SlotScene.scene",
+    "value": {
+      "depends": [
+        "a358a14f-5cc3-4f03-97f1-303bc46fbecb",
+        "3af763a6-d005-4e29-b059-01d31cf75854",
+        "20835ba4-6145-4fbc-a58a-051ce700aa3e@f9941",
+        "544e49d6-3f05-4fa8-9a9e-091f98fc2ce8@f9941",
+        "951249e0-9f16-456d-8b85-a6ca954da16b@f9941"
+      ],
+      "dependScripts": [
+        "CC3eba29-7abb-723a-f7ab-ae275e2277e8",
+        "977ebd19-e9dc-4b52-8a7f-0b342df152d3",
+        "8a0badb5-5e9b-4c6e-be8b-6ed0ce728672"
+      ]
+    },
+    "versionCode": 1
+  },
+  "b41c1d74-b41e-4dba-810c-99ba2e2e700d": {
+    "url": "db://assets/slotBar/scripts/core",
+    "value": {},
+    "versionCode": 1
+  },
+  "707fa198-af40-4cd4-9e69-64da0b27f63e": {
+    "url": "db://assets/slotBar/scripts/models",
+    "value": {},
+    "versionCode": 1
+  },
+  "8ab655b7-b641-4e67-a0dc-d4330645973e": {
+    "url": "db://assets/slotBar/scripts/views",
+    "value": {},
+    "versionCode": 1
+  },
+  "5e0d1d7f-7520-4e19-984f-18d504b7a48f": {
+    "url": "db://assets/slotBar/scripts/controllers",
+    "value": {},
+    "versionCode": 1
+  },
+  "ae2ad490-4122-499b-8d75-2fa57f193953": {
+    "url": "db://assets/slotBar/scripts/network",
+    "value": {},
+    "versionCode": 1
+  },
+  "180f0275-1f81-407c-90af-84176f77c9ee": {
+    "url": "db://assets/slotBar/scripts/services/ApiService.ts",
+    "value": {},
+    "versionCode": 1
+  },
+  "16c4c587-7990-4a4f-acd2-1359b72a484d": {
+    "url": "db://assets/slotBar/prefabs/ReelItem.prefab",
+    "value": {
+      "depends": [
+        "57520716-48c8-4a19-8acf-41c9f8777fb0@f9941"
+      ],
+      "dependScripts": []
+    },
+    "versionCode": 1
+  },
+  "288843dd-b52a-4c61-9a8a-c6fa1841b120": {
+    "url": "db://assets/slotBar/scripts/views/ReelView.ts",
+    "value": {},
+    "versionCode": 1
+  },
+  "8a0badb5-5e9b-4c6e-be8b-6ed0ce728672": {
+    "url": "db://assets/slotBar/scripts/controllers/SlotController.ts",
+    "value": {},
+    "versionCode": 1
+  },
+  "b4012054-21f8-4eca-95d9-2e4d8d701930": {
+    "url": "db://assets/slotBar/scripts/types",
+    "value": {},
+    "versionCode": 1
+  },
+  "afb0ca9b-a9a3-4dd8-a78a-f489cc38eac5": {
+    "url": "db://assets/slotBar/scripts/types/SymbolData.ts",
+    "value": {},
+    "versionCode": 1
+  },
+  "8fe7b93d-4443-4e46-992d-06fb99989b64": {
+    "url": "db://assets/slotBar/scripts/mockData",
+    "value": {},
+    "versionCode": 1
+  },
+  "7ee51eaf-7dda-4661-92c0-cd02198ede7a": {
+    "url": "db://assets/slotBar/scripts/mockData/NewComponent.ts",
+    "value": {},
+    "versionCode": 1
+  },
+  "d11c4515-387f-47ac-b686-5d1efca44864": {
+    "url": "db://assets/slotBar/scripts/mockData/NewComponent-001.ts",
+    "value": {},
+    "versionCode": 1
+  },
+  "4d9dc269-5199-42fa-8b71-22211b11943d": {
+    "url": "db://assets/slotBar/scripts/mockData/mockSymbolsData.json",
+    "value": {},
+    "versionCode": 1
+  },
+  "bf4b57cd-f1a9-4c76-add5-e8b64bff235a": {
+    "url": "db://assets/slotBar/scripts/services",
+    "value": {},
+    "versionCode": 1
+  },
+  "926e811b-6325-40a4-8dd3-9aa05e8c8ab7": {
+    "url": "db://assets/slotBar/scripts/mockData/getMockSymData.ts",
+    "value": {},
+    "versionCode": 1
+  },
+  "d11d0772-d1e1-40fd-af3f-e264f8939720": {
+    "url": "db://assets/slotBar/scripts/mockData/MockData.ts",
+    "value": {},
+    "versionCode": 1
+  },
+  "17d77c38-7274-40ec-b52e-9f44cf0c6fe7": {
+    "url": "db://assets/slotBar/artAssets",
+    "value": {},
+    "versionCode": 1
+  },
+  "1e972e5d-f4cc-4940-9f9d-2e90d0b0d9ad": {
+    "url": "db://assets/slotBar/artAssets/SymbolIcon",
+    "value": {},
+    "versionCode": 1
+  },
+  "549605de-6eb3-4ec9-8729-1c193bfa3005": {
+    "url": "db://assets/slotBar/artAssets/SymbolIcon/Green_grape_fruit.jpg",
+    "value": {},
+    "versionCode": 1
+  },
+  "549605de-6eb3-4ec9-8729-1c193bfa3005@6c48a": {
+    "url": "db://assets/slotBar/artAssets/SymbolIcon/Green_grape_fruit.jpg@6c48a",
+    "value": {
+      "depends": [
+        "549605de-6eb3-4ec9-8729-1c193bfa3005"
+      ]
+    },
+    "versionCode": 1
+  },
+  "2d05f3a0-4541-422e-977a-e3b945f8eb42": {
+    "url": "db://assets/slotBar/artAssets/SymbolIcon/Red_Apple.jpg",
+    "value": {},
+    "versionCode": 1
+  },
+  "2d05f3a0-4541-422e-977a-e3b945f8eb42@6c48a": {
+    "url": "db://assets/slotBar/artAssets/SymbolIcon/Red_Apple.jpg@6c48a",
+    "value": {
+      "depends": [
+        "2d05f3a0-4541-422e-977a-e3b945f8eb42"
+      ]
+    },
+    "versionCode": 1
+  },
+  "549605de-6eb3-4ec9-8729-1c193bfa3005@f9941": {
+    "url": "db://assets/slotBar/artAssets/SymbolIcon/Green_grape_fruit.jpg@f9941",
+    "value": {
+      "depends": [
+        "549605de-6eb3-4ec9-8729-1c193bfa3005@6c48a"
+      ]
+    },
+    "versionCode": 1
+  },
+  "2d05f3a0-4541-422e-977a-e3b945f8eb42@f9941": {
+    "url": "db://assets/slotBar/artAssets/SymbolIcon/Red_Apple.jpg@f9941",
+    "value": {
+      "depends": [
+        "2d05f3a0-4541-422e-977a-e3b945f8eb42@6c48a"
+      ]
+    },
+    "versionCode": 1
+  },
+  "a594c1bd-ca7c-4513-a75e-eb17f64e8060": {
+    "url": "db://assets/slotBar/scripts/eventSystem",
+    "value": {},
+    "versionCode": 1
+  },
+  "5b8e5780-d06b-430f-88d7-004bf3570d24": {
+    "url": "db://assets/slotBar/scripts/eventSystem/slotBarEventCenter.ts",
+    "value": {},
+    "versionCode": 1
+  },
+  "437063d8-457c-42ae-8dcb-64b798df93f9": {
+    "url": "db://assets/slotBar/scripts/eventSystem/EventCenter.ts",
+    "value": {},
+    "versionCode": 1
+  },
+  "bd19385c-588f-43c0-bab1-a509c9e1e64f": {
+    "url": "db://assets/slotBar/scripts/eventSystem/EventTypes.ts",
+    "value": {},
+    "versionCode": 1
+  },
+  "de36840f-95ec-4406-b02a-4d9769f3dac5": {
+    "url": "db://assets/slotBar/scripts/views/SlotBar/ReelSlot.ts",
+    "value": {},
+    "versionCode": 1
+  },
+  "3af763a6-d005-4e29-b059-01d31cf75854": {
+    "url": "db://assets/slotBar/prefabs/ReelSlot.prefab",
+    "value": {
+      "depends": [
+        "16c4c587-7990-4a4f-acd2-1359b72a484d"
+      ],
+      "dependScripts": [
+        "de36840f-95ec-4406-b02a-4d9769f3dac5"
+      ]
+    },
+    "versionCode": 1
+  },
+  "977ebd19-e9dc-4b52-8a7f-0b342df152d3": {
+    "url": "db://assets/slotBar/scripts/views/SlotBar/ReelView.ts",
+    "value": {},
+    "versionCode": 1
+  },
+  "8e0ccd28-c23f-4473-895f-37f213004c51": {
+    "url": "db://assets/slotBar/scripts/services/ApiService-001.ts",
+    "value": {},
+    "versionCode": 1
+  },
+  "3c0f30a4-47c8-4944-9c8c-79716cfc7d4a": {
+    "url": "db://assets/slotBar/scripts/services/ServiceBase.ts",
+    "value": {},
+    "versionCode": 1
+  },
+  "2d6577b6-9077-4710-9b06-1e45d9b998fe": {
+    "url": "db://assets/slotBar/scripts/services/WebSocketService.ts",
+    "value": {},
+    "versionCode": 1
+  },
+  "8883e334-c6ea-4fe3-b643-1b7deb774eb3": {
+    "url": "db://assets/slotBar/scenes/LoginScene.scene",
+    "value": {
+      "depends": [
+        "8883e334-c6ea-4fe3-b643-1b7deb774eb3",
+        "bd1bcaba-bd7d-4a71-b143-997c882383e4@f9941",
+        "20835ba4-6145-4fbc-a58a-051ce700aa3e@f9941",
+        "544e49d6-3f05-4fa8-9a9e-091f98fc2ce8@f9941",
+        "951249e0-9f16-456d-8b85-a6ca954da16b@f9941",
+        "950e61e9-9dd5-4852-a179-98859b712a7a"
+      ],
+      "dependScripts": [
+        "480babf0-3491-4040-ab67-6e75c88681f5",
+        "dbc1bc5a-d1cb-498c-a162-1bbc32bab870",
+        "2d1c4efd-e698-4ed7-8456-587b242bdcc9",
+        "fc479904-f1e1-4b5f-ad5a-fd59407fba2e"
+      ]
+    },
+    "versionCode": 1
+  },
+  "d3d5d6a5-816c-49c4-afe0-92c0ebd1f0b4": {
+    "url": "db://assets/slotBar/scripts/views/SlotBar",
+    "value": {},
+    "versionCode": 1
+  },
+  "f8041157-ed41-491c-a73a-c897400e7bce": {
+    "url": "db://assets/slotBar/scripts/views/Login",
+    "value": {},
+    "versionCode": 1
+  },
+  "480babf0-3491-4040-ab67-6e75c88681f5": {
+    "url": "db://assets/slotBar/scripts/views/Login/LoginView.ts",
+    "value": {},
+    "versionCode": 1
+  },
+  "dbc1bc5a-d1cb-498c-a162-1bbc32bab870": {
+    "url": "db://assets/slotBar/scripts/views/Login/RegisterView.ts",
+    "value": {},
+    "versionCode": 1
+  },
+  "fc479904-f1e1-4b5f-ad5a-fd59407fba2e": {
+    "url": "db://assets/slotBar/scripts/views/Login/LoginViewController.ts",
+    "value": {},
+    "versionCode": 1
+  },
+  "950e61e9-9dd5-4852-a179-98859b712a7a": {
+    "url": "db://assets/slotBar/prefabs/TipText.prefab",
+    "value": {
+      "depends": [],
+      "dependScripts": []
+    },
+    "versionCode": 1
+  },
+  "4f8660ca-7ffd-456f-8670-fb46f90cb7dc": {
+    "url": "db://assets/slotBar/scripts/unit",
+    "value": {},
+    "versionCode": 1
+  },
+  "2d1c4efd-e698-4ed7-8456-587b242bdcc9": {
+    "url": "db://assets/slotBar/scripts/unit/TipTextController.ts",
+    "value": {},
+    "versionCode": 1
+  }
+}
