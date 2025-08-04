@@ -1,10 +1,10 @@
-import { _decorator, Button, Component, RichText } from 'cc';
-import slotBarEventBus from '../../eventSystem/EventCenter';
-import { soltEventTypes } from '../../eventSystem/EventTypes';
-import { SymbolData } from '../../types/SymbolData';
+import {_decorator, Button, Component, RichText} from 'cc';
+import {soltEventTypes} from '../../eventSystem/EventTypes';
+import {SymbolData} from '../../types/SymbolData';
 import {ReelSlot} from "db://assets/slotBar/scripts/views/SlotBar/ReelSlot";
+import EventBus from "db://assets/slotBar/scripts/eventSystem/EventCenter";
 
-const { ccclass, property } = _decorator;
+const {ccclass, property} = _decorator;
 
 @ccclass('ReelView')
 export class ReelView extends Component {
@@ -17,18 +17,23 @@ export class ReelView extends Component {
     @property(RichText)
     resultRichText: RichText = null;
 
+    @property(RichText)
+    coinRichText: RichText = null;
+
     private spinCompletedCount = 0; // 用來記錄完成幾個滾輪
 
     onEnable() {
         this.startButton.node.on('click', this.onClickSpin, this);
-        slotBarEventBus.on(soltEventTypes.InitReel, this.onInitReel, this);
-        slotBarEventBus.on(soltEventTypes.FetchResult, this.onFetchResult, this);
+        EventBus.slotBarEventBus.on(soltEventTypes.InitReel, this.onInitReel, this);
+        EventBus.slotBarEventBus.on(soltEventTypes.UpdateCoinText, this.updateCoinText, this);
+        EventBus.slotBarEventBus.on(soltEventTypes.FetchResult, this.onFetchResult, this);
     }
 
     onDisable() {
         this.startButton.node.off('click', this.onClickSpin, this);
-        slotBarEventBus.off(soltEventTypes.InitReel, this.onInitReel, this);
-        slotBarEventBus.off(soltEventTypes.FetchResult, this.onFetchResult, this);
+        EventBus.slotBarEventBus.off(soltEventTypes.InitReel, this.onInitReel, this);
+        EventBus.slotBarEventBus.off(soltEventTypes.UpdateCoinText, this.updateCoinText, this);
+        EventBus.slotBarEventBus.off(soltEventTypes.FetchResult, this.onFetchResult, this);
     }
 
     private onInitReel(symbolDataList: SymbolData[]) {
@@ -49,7 +54,7 @@ export class ReelView extends Component {
                     if (this.spinCompletedCount === this.reelViews.length) {
                         this.showFinalResult(results);
                         this.startButton.node.active = true; // 重新啟用開始按鈕
-                        slotBarEventBus.emit(soltEventTypes.AllReelsFinished);
+                        EventBus.slotBarEventBus.emit(soltEventTypes.AllReelsFinished);
                     }
                 };
 
@@ -61,11 +66,15 @@ export class ReelView extends Component {
     onClickSpin() {
         this.spinCompletedCount = 0; // 重置完成計數
         this.resultRichText.string = '🎰 旋轉中...';
-        slotBarEventBus.emit(soltEventTypes.SpinStart);
+        EventBus.slotBarEventBus.emit(soltEventTypes.SpinStart);
     }
 
     showFinalResult(results: string[]) {
         this.resultRichText.string = `🎉 結果：${results.join(' - ')}`;
+    }
+
+    updateCoinText(coinNum: any) {
+        this.coinRichText.string = `🎉 結果：${coinNum}`;
     }
 }
 
