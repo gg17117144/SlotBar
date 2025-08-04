@@ -1,16 +1,16 @@
 import {ServiceBase} from "db://assets/slotBar/scripts/services/ServiceBase";
+import EventBus from "db://assets/slotBar/scripts/eventSystem/EventCenter";
+import {tipTextEventTypes} from "db://assets/slotBar/scripts/eventSystem/EventTypes";
 
 export class WebSocketService {
     private static socket: WebSocket | null = null;
 
     // 建立 WebSocket 連線
     static connectWebSocket(onMessage: (msg: any) => void): void {
-        console.log("ServiceBase.Websocket_BASE" + ServiceBase.Websocket_BASE)
-        console.log("ServiceBase.token" + ServiceBase.token)
-        console.log("檢查路徑" + `${ServiceBase.Websocket_BASE}?token=${ServiceBase.token}`)
         this.socket = new WebSocket(`${ServiceBase.Websocket_BASE}?token=${ServiceBase.token}`);
 
         this.socket.onopen = () => {
+            EventBus.tipTextEventBus.emit(tipTextEventTypes.ShowTipText, {text: "✅ WebSocket 已連線"});
             console.log("✅ WebSocket 已連線");
         };
 
@@ -20,10 +20,12 @@ export class WebSocketService {
         };
 
         this.socket.onerror = (e) => {
+            EventBus.tipTextEventBus.emit(tipTextEventTypes.ShowTipText, {text: "WebSocket 錯誤"});
             console.error("WebSocket 錯誤", e);
         };
 
         this.socket.onclose = () => {
+            EventBus.tipTextEventBus.emit(tipTextEventTypes.ShowTipText, {text: "WebSocket 已關閉"});
             console.log("WebSocket 已關閉");
         };
     }
