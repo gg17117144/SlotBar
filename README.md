@@ -2,7 +2,7 @@
 
 本專案為一個使用 Cocos Creator 前端的拉霸機遊戲，**WebSocket 即時拉霸遊戲**。
 
-[後端專案](https://github.com/gg17117144/go-login-jwt/tree/main)
+[後端專案](https://github.com/gg17117144/go-login-jwt/tree/main) => 太久沒用需要暖機大約 50 seconds or more.
 
 [Page部屬](https://gg17117144.github.io/SlotBar)
 
